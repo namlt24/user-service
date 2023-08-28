@@ -1,15 +1,14 @@
 package com.example.userservice.repo;
 
 
-import com.example.userservice.model.Role;
 import com.example.userservice.model.User;
 import com.example.userservice.util.DataUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
-import org.hibernate.query.NativeQuery;
-import org.springframework.jdbc.object.SqlQuery;
+
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
