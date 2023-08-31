@@ -10,42 +10,42 @@ import jakarta.persistence.Table;
 public class MapUserRole {
     @Id
     @Column(name = "map_user_role_id",length = 10)
-    private Integer mapUserRoleId;
+    private Long mapUserRoleId;
     @Column(name = "user_id",length = 10)
-    private Integer UserId;
+    private Long UserId;
     @Column(name = "role_id",length = 10)
-    private Integer RoleId;
+    private Long RoleId;
 
     public MapUserRole() {
     }
 
-    public MapUserRole(Integer mapUserRoleId, Integer userId, Integer roleId) {
+    public MapUserRole(Long mapUserRoleId, Long userId, Long roleId) {
         this.mapUserRoleId = mapUserRoleId;
         UserId = userId;
         RoleId = roleId;
     }
 
-    public Integer getMapUserRoleId() {
+    public Long getMapUserRoleId() {
         return mapUserRoleId;
     }
 
-    public void setMapUserRoleId(Integer mapUserRoleId) {
+    public void setMapUserRoleId(Long mapUserRoleId) {
         this.mapUserRoleId = mapUserRoleId;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return UserId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         UserId = userId;
     }
 
-    public Integer getRoleId() {
+    public Long getRoleId() {
         return RoleId;
     }
 
-    public void setRoleId(Integer roleId) {
+    public void setRoleId(Long roleId) {
         RoleId = roleId;
     }
 }

@@ -9,8 +9,9 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*") // Cho phép truy cập từ nguồn gốc này
-                .allowedMethods("GET", "POST", "PUT", "DELETE") // Cho phép các phương thức HTTP
-                .allowedHeaders("*"); // Cho phép tất cả các header
+                .allowedOrigins("http://localhost:4200")
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedHeaders("Content-Type")
+                .exposedHeaders("Content-Type"); ;
     }
 }

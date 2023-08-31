@@ -22,4 +22,8 @@ public class RoleService {
         return result;
     }
 
+    public List<RoleDTO> findAllRoles(){
+        List<RoleDTO> result = ObjectMapperUtils.mapAll(roleRepository.findAll(), RoleDTO.class);
+        return result;
+    }
 }

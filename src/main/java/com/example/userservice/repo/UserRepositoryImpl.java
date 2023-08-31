@@ -8,12 +8,11 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Component
-public class UserRepoImpl implements UserRepoCustom {
+public class UserRepositoryImpl implements UserRepoCustom {
     @PersistenceContext(name = "bccsfood")
     private EntityManager em;
 
