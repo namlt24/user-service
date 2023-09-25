@@ -2,6 +2,8 @@ package com.example.userservice.model;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -70,6 +72,18 @@ public class User {
         return photos;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User user)) return false;
+        return Objects.equals(getUserId(), user.getUserId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUserId());
+    }
+
     public void setPhotos(String photos) {
         this.photos = photos;
     }
@@ -89,4 +103,6 @@ public class User {
     public void setUserId(Long userId) {
         this.userId = userId;
     }
+
+
 }

@@ -19,7 +19,7 @@ public class RoleRepositoryImpl implements RoleRepositoryCustom {
     @Override
     public List<Role> findListRoleByUserId(Long userId) {
         StringBuilder sql = new StringBuilder(" ");
-        sql.append("select r.* from bccsfood.roles r, bccsfood.map_user_role m where r.role_id = m.role_id and m.user_id =:userId");
+        sql.append("select r.* from bccsfood.roles r, bccsfood.map_user_role m where r.role_id = m.role_id and m.user_id =:userId and m.status =1");
         Query query = em.createNativeQuery(sql.toString(), Role.class);
         query.setParameter("userId", userId);
         return query.getResultList();

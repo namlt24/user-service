@@ -20,14 +20,33 @@ public class UserRepositoryImpl implements UserRepoCustom {
     @Override
     public List<User> listAllUserByStatus(String status) {
         StringBuilder sql = new StringBuilder(" ");
-        sql.append("select * from bccsfood.users where status =:status");
-        Query query = em.createNativeQuery(sql.toString(),User.class);
-        if (!DataUtil.isNullOrEmpty(status)){
-            query.setParameter("status", "1");
-        }else{
+        sql.append("select * from bccsfood.users where 1=1 ");
+
+        if (!DataUtil.isNullOrEmpty(status)) {
+            sql.append(" and status =:status");
+        }
+
+        Query query = em.createNativeQuery(sql.toString(), User.class);
+
+        if (!DataUtil.isNullOrEmpty(status)) {
             query.setParameter("status", status);
         }
+
         List<User> result = query.getResultList();
         return result;
     }
+
+    @Override
+    public User findByUserId(Long id) {
+        StringBuilder sql = new StringBuilder(" ");
+        sql.append("select * from bccsfood.users where 1=1 and user_id =:id");
+        Query query = em.createNativeQuery(sql.toString(), User.class);
+        query.setParameter("id", id);
+        List<User> result = query.getResultList();
+        if (result.size()==0) {
+            return null;
+        }
+        return result.get(0);
+    }
+
 }

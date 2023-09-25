@@ -8,4 +8,7 @@ import java.util.List;
 public interface UserRepoCustom {
     public List<User> listAllUserByStatus(String status);
 
+    public User findByUserId(Long id);
+
+
 }
